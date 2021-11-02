@@ -13,7 +13,7 @@ const imageNumbers = [];
 let currentImgNumber = 1;
 
 const clear = () => {
-  modalEl.innerHTML = `<i class="fas fa-arrow-circle-left"></i
+  modalEl.innerHTML = ` <i class="far fa-times-circle"></i><i class="fas fa-arrow-circle-left"></i
   ><i class="fas fa-arrow-circle-right"></i>`;
 };
 
@@ -66,6 +66,11 @@ container.addEventListener('click', (e) => {
 //close modal with ovarlay click
 overlayEl.addEventListener('click', toggleModal);
 
+//close modal with close button
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fa-times-circle')) toggleModal();
+});
+
 //Close modal window with Esc
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalEl.classList.contains('visible'))
@@ -83,14 +88,13 @@ const prevImg = () => {
   setImage();
 };
 
-// NEXT ARROW
 modalEl.addEventListener('click', (e) => {
   const clicked = e.target;
 
   if (!clicked.classList.contains('fas')) return;
 
+  // NEXT ARROW
   if (clicked.classList.contains('fa-arrow-circle-left')) prevImg();
+  // PREV ARROW
   if (clicked.classList.contains('fa-arrow-circle-right')) nextImg();
 });
-// PREV ARROW
-prevArrowEl.addEventListener('click', prevImg);
