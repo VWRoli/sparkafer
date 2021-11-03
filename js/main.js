@@ -13,8 +13,10 @@ const imageNumbers = [];
 let currentImgNumber = 1;
 
 const clear = () => {
-  modalEl.innerHTML = ` <i class="far fa-times-circle"></i><i class="fas fa-arrow-circle-left"></i
-  ><i class="fas fa-arrow-circle-right"></i>`;
+  modalEl.innerHTML = `<i class="far fa-times-circle"></i>
+  <div class="left"><i class="fas fa-arrow-circle-left"></i></div>
+  <div class="right"><i class="fas fa-arrow-circle-right"></i></div>
+  `;
 };
 
 /////////////////////////////////////////////////

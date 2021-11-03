@@ -66,10 +66,7 @@ img {
 }
 
 .fas {
-  position: absolute;
-  top: 50%;
   font-size: 2rem;
-  cursor: pointer;
 }
 .fas:hover,
 .fa-times-circle:hover {
@@ -84,10 +81,48 @@ img {
 }
 .fa-times-circle {
   position: absolute;
+  z-index: 100;
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
   cursor: pointer;
+  color: crimson;
+}
+
+.left,
+.right {
+  height: 100%;
+  width: 7.5%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left:hover,
+.right:hover {
+  cursor: pointer;
+  background: linear-gradient(
+    to left,
+    rgba(25, 25, 25, 0.5),
+    rgba(25, 25, 25, 0.25),
+    rgba(25, 25, 25, 0)
+  );
+  transition: all 0.5s;
+}
+
+.left {
+  left: 0;
+}
+.left:hover {
+  background: linear-gradient(
+    to right,
+    rgba(25, 25, 25, 0.5),
+    rgba(25, 25, 25, 0.25),
+    rgba(25, 25, 25, 0)
+  );
+}
+.right {
+  right: 0;
 }
 
 /*? MEDIA QUERIES */
