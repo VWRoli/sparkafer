@@ -122,7 +122,7 @@ function handleTouchMove(e) {
   let xDiff = xDown - xUp;
   let yDiff = yDown - yUp;
 
-  if (Math.abs(xDiff) + Math.abs(yDiff) > 200) {
+  if (Math.abs(xDiff) + Math.abs(yDiff) > 150) {
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       /*most significant*/
       if (xDiff > 0) {
