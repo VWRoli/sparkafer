@@ -144,6 +144,10 @@ img {
   .modal {
     height: 100vh;
     width: 100vw;
+    border: none;
+  }
+  img {
+    border-radius: 0;
   }
   .left,
   .right {
