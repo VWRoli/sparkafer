@@ -153,3 +153,18 @@ modalEl.addEventListener('click', (e) => {
   // PREV ARROW
   if (clicked.classList.contains('fa-arrow-circle-right')) nextImg();
 });
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+modalEl.addEventListener('dblclick', function () {
+  if (this.requestFullscreen) {
+    this.requestFullscreen();
+  } else if (this.mozRequestFullScreen) {
+    this.mozRequestFullScreen();
+  } else if (this.webkitRequestFullscreen) {
+    this.webkitRequestFullscreen();
+  } else if (this.msRequestFullscreen) {
+    this.msRequestFullscreen();
+  }
+});
