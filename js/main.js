@@ -10,6 +10,9 @@ const prevArrowEl = document.querySelector('.fa-arrow-circle-left');
 const startImgNumber = 1;
 const endImgNumber = 106;
 const imageNumbers = [];
+
+//State variables
+let isFullScreen = false;
 let currentImgNumber = 1;
 
 const clear = () => {
@@ -160,15 +163,31 @@ modalEl.addEventListener('click', (e) => {
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-
+//HANDLE FULLSCREEN
 modalEl.addEventListener('dblclick', function () {
-  if (this.requestFullscreen) {
-    this.requestFullscreen();
-  } else if (this.mozRequestFullScreen) {
-    this.mozRequestFullScreen();
-  } else if (this.webkitRequestFullscreen) {
-    this.webkitRequestFullscreen();
-  } else if (this.msRequestFullscreen) {
-    this.msRequestFullscreen();
+  if (!isFullScreen) {
+    isFullScreen = !isFullScreen;
+    if (this.requestFullscreen) {
+      this.requestFullscreen();
+    } else if (this.mozRequestFullScreen) {
+      this.mozRequestFullScreen();
+    } else if (this.webkitRequestFullscreen) {
+      this.webkitRequestFullscreen();
+    } else if (this.msRequestFullscreen) {
+      this.msRequestFullscreen();
+    }
+  } else {
+    isFullScreen = !isFullScreen;
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
   }
 });
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
