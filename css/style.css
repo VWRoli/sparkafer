@@ -73,6 +73,9 @@ img {
 
 .fas {
   font-size: 2rem;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
 }
 .fas:hover,
 .fa-times-circle:hover {
@@ -107,19 +110,31 @@ img {
 
 .right:hover {
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
   background: linear-gradient(
     to left,
     rgba(25, 25, 25, 0.5),
     rgba(25, 25, 25, 0.25),
     rgba(25, 25, 25, 0)
   );
+
   transition: all 0.5s;
+}
+.right:hover > .fa-arrow-circle-right {
+  visibility: visible;
+  opacity: 1;
+}
+.left:hover > .fa-arrow-circle-left {
+  visibility: visible;
+  opacity: 1;
 }
 
 .left {
   left: 0;
 }
 .left:hover {
+  cursor: pointer;
+  border-radius: 5px 0 0 5px;
   background: linear-gradient(
     to right,
     rgba(25, 25, 25, 0.5),
