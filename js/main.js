@@ -82,12 +82,16 @@ document.addEventListener('keydown', (e) => {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 const nextImg = () => {
-  currentImgNumber++;
-  setImage();
+  if (currentImgNumber < endImgNumber) {
+    currentImgNumber++;
+    setImage();
+  }
 };
 const prevImg = () => {
-  currentImgNumber--;
-  setImage();
+  if (currentImgNumber > startImgNumber) {
+    currentImgNumber--;
+    setImage();
+  }
 };
 
 /////////////////////////////////////////////////
