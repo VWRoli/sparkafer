@@ -32,7 +32,7 @@ for (let i = startImgNumber; i <= endImgNumber; i++) {
 
 imageNumbers.forEach((imgNumber) => {
   const html = `<div class="image-wrapper">
-    <img src="https://cdn.statically.io/img/sparkafer.netlify.app/w=300/images/image_${imgNumber}.jpg"
+    <img src="https://cdn.statically.io/img/sparkafer.netlify.app/w=400/images/image_${imgNumber}.jpg"
      data-nr="${imgNumber}" alt="Image ${imgNumber}" />
     </div>`;
   container.insertAdjacentHTML('beforeend', html);
@@ -55,7 +55,7 @@ const toggleModal = () => {
 
 const setImage = () => {
   clear();
-  const html = `<img src="./images/image_${currentImgNumber}.jpg" alt="Image ${currentImgNumber}" />`;
+  const html = `<img src="https://cdn.statically.io/img/sparkafer.netlify.app/w=950/images/image_${currentImgNumber}.jpg" alt="Image ${currentImgNumber}" />`;
   modalEl.insertAdjacentHTML('afterbegin', html);
 };
 
