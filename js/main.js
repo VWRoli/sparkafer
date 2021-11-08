@@ -32,7 +32,8 @@ for (let i = startImgNumber; i <= endImgNumber; i++) {
 
 imageNumbers.forEach((imgNumber) => {
   const html = `<div class="image-wrapper">
-    <img src="./images/image_${imgNumber}.jpg" data-nr="${imgNumber}" alt="Image ${imgNumber}" />
+    <img src="https://cdn.statically.io/img/sparkafer.netlify.app/w=300/images/image_${imgNumber}.jpg"
+     data-nr="${imgNumber}" alt="Image ${imgNumber}" />
     </div>`;
   container.insertAdjacentHTML('beforeend', html);
 });

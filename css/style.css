@@ -52,7 +52,6 @@ img {
   display: none;
 }
 
-/*? MODAL */
 .modal {
   position: fixed;
   top: 50%;
@@ -144,6 +143,10 @@ img {
 }
 .right {
   right: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /*? MEDIA QUERIES */
