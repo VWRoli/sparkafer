@@ -21,10 +21,7 @@ const clear = () => {
   <div class="right"><i class="fas fa-arrow-circle-right"></i></div>
   `;
 };
-
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-
 // SHOW IMAGES
 for (let i = startImgNumber; i <= endImgNumber; i++) {
   imageNumbers.push(i);
@@ -39,10 +36,7 @@ imageNumbers.forEach((imgNumber) => {
 });
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-
 // SHOW MODAL
-
 const toggleModal = () => {
   if (modalEl.classList.contains('visible')) {
     clear();
@@ -82,8 +76,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalEl.classList.contains('visible'))
     toggleModal();
 });
-
-/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 const nextImg = () => {
   if (currentImgNumber < endImgNumber) {
@@ -99,13 +91,12 @@ const prevImg = () => {
 };
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-
+// HANDLE TOUCH EVENTS
 document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
-var xDown = null;
-var yDown = null;
+let xDown = null;
+let yDown = null;
 
 function getTouches(e) {
   return (
@@ -135,7 +126,6 @@ function handleTouchMove(e) {
       /*most significant*/
       if (xDiff > 0) {
         /* right swipe */
-        console.log('right');
         nextImg();
       } else {
         /* left swipe */
@@ -149,8 +139,7 @@ function handleTouchMove(e) {
 }
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-
+//HANDLE NEXT AND PREV SLIDE
 modalEl.addEventListener('click', (e) => {
   const clicked = e.target;
 
@@ -162,7 +151,6 @@ modalEl.addEventListener('click', (e) => {
   if (clicked.classList.contains('fa-arrow-circle-right')) nextImg();
 });
 
-/////////////////////////////////////////////////
 /////////////////////////////////////////////////
 //HANDLE FULLSCREEN
 modalEl.addEventListener('dblclick', function () {
@@ -190,5 +178,3 @@ modalEl.addEventListener('dblclick', function () {
     }
   }
 });
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
